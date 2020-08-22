@@ -16,6 +16,10 @@ ENV TOKEN=""
 ENV POSTURL=""
 ENV SECRET=""
 ENV ENV="nornal"
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
+
 #ADD mirai /mirai
 RUN mkdir /mirai
 COPY init.sh /
