@@ -6,8 +6,8 @@ RUN  apk add --no-cache ca-certificates  git
 RUN  git clone https://gitee.com/scjtqs/go-cqhttp-plus.git /miraigo
 
 RUN  cd /miraigo\
-     && go list -json all\
-     && go build -o miraigo
+#     && go list -json all\
+     && go build  -ldflags "-s -w -extldflags '-static'" -o miraigo
 
 FROM alpine:3.12
 ENV QQ=""
