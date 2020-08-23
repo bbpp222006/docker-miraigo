@@ -4,7 +4,7 @@ RUN  sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/r
 RUN  apk add --no-cache ca-certificates  git
 
 RUN  git clone https://gitee.com/scjtqs/go-cqhttp-plus.git /miraigo
-
+ENV GOPROXY https://goproxy.cn
 RUN  cd /miraigo\
 #     && go list -json all\
      && go build -o miraigo
