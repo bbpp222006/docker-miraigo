@@ -1,0 +1,34 @@
+{
+	"uin": $QQ,
+	"password": "$PASSWORD",
+	"encrypt_password": false,
+	"password_encrypted": "",
+	"enable_db": true,
+	"access_token": "$TOKEN",
+	"relogin": true,
+	"relogin_delay": 3,
+	"async_load": false,
+	"http_config": {
+		"enabled": true,
+		"host": "0.0.0.0",
+		"port": 5700,
+		"timeout": 0,
+		"post_urls": {"$POSTURL":"$SECRET"}
+	},
+	"ws_config": {
+		"enabled": true,
+		"host": "0.0.0.0",
+		"port": 6700
+	},
+	"ws_reverse_servers": [
+		{
+			"enabled": false,
+			"reverse_url": "ws://you_websocket_universal.server",
+			"reverse_api_url": "ws://you_websocket_api.server",
+			"reverse_event_url": "ws://you_websocket_event.server",
+			"reverse_reconnect_interval": 3000
+		}
+	],
+	"post_message_format": "string",
+	"debug": false
+}
