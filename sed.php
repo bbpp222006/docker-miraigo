@@ -24,6 +24,7 @@ $array['password']=$password;
 $array['access_token']=$token;
 $array['heartbeat_interval']=intval(5);
 $array['http_config']['post_urls']=[$posturl=>$secret];
+$array['http_config']['timeout']=1;
 $array['ws_reverse_servers'][0]['enabled']=boolval($ws_enable);
 $array['ws_reverse_servers'][0]['reverse_url']=$_SERVER['WS_REVERSE_URL'];
 $array['ws_reverse_servers'][0]['reverse_api_url']=$_SERVER['WS_REVERSE_API_URL'];
