@@ -12,7 +12,7 @@ $qq=$_SERVER['QQ'];
 $password=$_SERVER['PASSWORD'];
 $posturl=$_SERVER['POSTURL'];
 $secret=$_SERVER['SECRET'];
-$ws_enable=(($_SERVER['WS_REVERSE_SERVERS_ENABLE']===true) || (strtolower($_SERVER['WS_REVERSE_SERVERS_ENABLE'])!=='false'))?true:false;
+$ws_enable=(($_SERVER['WS_REVERSE_SERVERS_ENABLE']===true) || (strtolower($_SERVER['WS_REVERSE_SERVERS_ENABLE'])!=='false' && !empty($_SERVER['WS_REVERSE_SERVERS_ENABLE'])))?true:false;
 $str=file_get_contents($file_name);
 $array=json_decode($str,true);
 $array['uin']=$qq;
