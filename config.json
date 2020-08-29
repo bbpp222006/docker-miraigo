@@ -1,10 +1,10 @@
 {
-	"uin": $QQ,
-	"password": "$PASSWORD",
+	"uin": 0,
+	"password": "",
 	"encrypt_password": false,
 	"password_encrypted": "",
 	"enable_db": true,
-	"access_token": "$TOKEN",
+	"access_token": "",
 	"relogin": {
 		"enabled": true,
 		"relogin_delay": 3,
@@ -18,7 +18,7 @@
 		"host": "0.0.0.0",
 		"port": 5700,
 		"timeout": 1,
-		"post_urls": {"$POSTURL":"$SECRET"}
+		"post_urls": {"":""}
 	},
 	"ws_config": {
 		"enabled": true,
