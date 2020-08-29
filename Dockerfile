@@ -1,21 +1,24 @@
 FROM golang:alpine AS builder
-RUN  sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
+#RUN  sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
 
 RUN  apk add --no-cache ca-certificates  git
 
 RUN  git clone --depth 1 https://github.com/Mrs4s/go-cqhttp.git /miraigo
-ENV GOPROXY https://goproxy.cn
+#ENV GOPROXY https://goproxy.cn
 RUN  cd /miraigo\
 #     && go list -json all\
      && go build  -ldflags "-s -w -extldflags '-static'"  -o miraigo
 
-FROM alpine:3.12
+FROM alpine
 ENV QQ=""
 ENV PASSWORD=""
 ENV TOKEN=""
 ENV POSTURL=""
 ENV SECRET=""
-ENV ENV="nornal"
+ENV WS_REVERSE_URL=""
+ENV WS_REVERSE_API_URL=""
+ENV WS_REVERSE_EVENT_URL=""
+ENV WS_REVERSE_SERVERS_ENABLE=""
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
@@ -26,6 +29,7 @@ COPY init.sh /
 COPY --from=builder /miraigo/miraigo /
 COPY config.json  /
 COPY check.php /
+COPY sed.php /
 WORKDIR /mirai
 
 RUN  sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
