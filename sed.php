@@ -15,6 +15,10 @@ $secret=$_SERVER['SECRET'];
 $ws_enable=(($_SERVER['WS_REVERSE_SERVERS_ENABLE']===true) || (strtolower($_SERVER['WS_REVERSE_SERVERS_ENABLE'])!=='false' && !empty($_SERVER['WS_REVERSE_SERVERS_ENABLE'])))?true:false;
 $str=file_get_contents($file_name);
 $array=json_decode($str,true);
+if(empty($array))
+{
+    exit(0);
+}
 $array['uin']=$qq;
 $array['password'];
 $array['access_token']=$token;
