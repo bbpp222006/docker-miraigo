@@ -4,15 +4,20 @@
 	"encrypt_password": false,
 	"password_encrypted": "",
 	"enable_db": true,
-	"access_token": "$TOKEN",
-	"relogin": true,
-	"relogin_delay": 3,
-	"async_load": false,
+	"access_token": "",
+	"relogin": {
+		"enabled": true,
+		"relogin_delay": 3,
+		"max_relogin_times": 0
+	},
+	"ignore_invalid_cqcode": false,
+	"force_fragmented": true,
+	"heartbeat_interval": 0,
 	"http_config": {
 		"enabled": true,
 		"host": "0.0.0.0",
 		"port": 5700,
-		"timeout": 0,
+		"timeout": 1,
 		"post_urls": {"$POSTURL":"$SECRET"}
 	},
 	"ws_config": {
@@ -30,5 +35,6 @@
 		}
 	],
 	"post_message_format": "string",
-	"debug": false
+	"debug": false,
+	"log_level": ""
 }
