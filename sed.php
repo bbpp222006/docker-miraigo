@@ -20,7 +20,7 @@ if(empty($array))
     exit(0);
 }
 $array['uin']=$qq;
-$array['password'];
+$array['password']=$password;
 $array['access_token']=$token;
 $array['http_config']['post_urls']=[$posturl=>$secret];
 $array['ws_reverse_servers']['enabled']=boolval($ws_enable);
