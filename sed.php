@@ -8,7 +8,7 @@
 //用于更新config.json
 $file_name='/mirai/config.json';
 $token=$_SERVER['TOKEN'];
-$qq=$_SERVER['QQ'];
+$qq=intval($_SERVER['QQ']);
 $password=$_SERVER['PASSWORD'];
 $posturl=$_SERVER['POSTURL'];
 $secret=$_SERVER['SECRET'];
