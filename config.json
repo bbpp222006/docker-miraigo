@@ -4,7 +4,7 @@
 	"encrypt_password": false,
 	"password_encrypted": "",
 	"enable_db": true,
-	"access_token": "",
+	"access_token": "$TOKEN",
 	"relogin": {
 		"enabled": true,
 		"relogin_delay": 3,
@@ -12,7 +12,7 @@
 	},
 	"ignore_invalid_cqcode": false,
 	"force_fragmented": true,
-	"heartbeat_interval": 0,
+	"heartbeat_interval": 5,
 	"http_config": {
 		"enabled": true,
 		"host": "0.0.0.0",
