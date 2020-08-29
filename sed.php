@@ -28,4 +28,4 @@ $array['ws_reverse_servers'][0]['reverse_url']=$_SERVER['WS_REVERSE_URL'];
 $array['ws_reverse_servers'][0]['reverse_api_url']=$_SERVER['WS_REVERSE_API_URL'];
 $array['ws_reverse_servers'][0]['reverse_event_url']=$_SERVER['WS_REVERSE_EVENT_URL'];
 
-file_put_contents($file_name,json_encode($array));
+file_put_contents($file_name,json_encode($array,JSON_PRETTY_PRINT));
