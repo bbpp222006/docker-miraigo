@@ -32,7 +32,7 @@ COPY check.php /
 COPY sed.php /
 WORKDIR /mirai
 
-RUN  sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
+#RUN  sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
 
 RUN  apk add --no-cache ca-certificates && \
      apk add --no-cache curl bash tree tzdata php7-openssl php7 php7-curl php7-json expect git && \
