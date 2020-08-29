@@ -19,7 +19,7 @@ $array['uin']=$qq;
 $array['password'];
 $array['access_token']=$token;
 $array['http_config']['post_urls']=[$posturl=>$secret];
-$array['ws_reverse_servers']['enabled']=$ws_enable;
+$array['ws_reverse_servers']['enabled']=boolval($ws_enable);
 $array['ws_reverse_servers']['reverse_url']=$_SERVER['WS_REVERSE_URL'];
 $array['ws_reverse_servers']['reverse_api_url']=$_SERVER['WS_REVERSE_API_URL'];
 $array['ws_reverse_servers']['reverse_event_url']=$_SERVER['WS_REVERSE_EVENT_URL'];
