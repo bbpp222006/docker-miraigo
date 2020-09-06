@@ -50,7 +50,7 @@ HEALTHCHECK --interval=5s --timeout=2s --retries=10 \
   CMD php /check.php || exit 1
 
 COPY supervisord.conf /etc/
-COPY supervisor.d /etc/
+COPY supervisor.d/ /etc/supervisor.d/
 
 RUN wget http://pecl.php.net/get/swoole-4.4.14.tgz \
     && printf "yes\nyes\nyes\nno" | pecl install swoole-4.4.14.tgz \
