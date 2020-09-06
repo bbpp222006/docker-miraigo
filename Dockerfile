@@ -35,11 +35,15 @@ WORKDIR /mirai
 #RUN  sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
 
 RUN  apk add --no-cache ca-certificates && \
-     apk add --no-cache curl bash tree tzdata php7-openssl php7 php7-curl php7-json expect git && \
+     apk add --no-cache curl bash tree tzdata php7-openssl php7 php7-curl php7-json expect git supervisor && \
      cp -rf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime\
      && apk del tzdata \
-     && chmod +x /init.sh
+     && chmod +x /init.sh \
+     && mkdir -p /var/log/supervisor
 HEALTHCHECK --interval=5s --timeout=2s --retries=10 \
   CMD php /check.php || exit 1
+
+COPY supervisor.conf /etc/
+COPY supervisor.d /etc/
 
 CMD ["/init.sh"]
