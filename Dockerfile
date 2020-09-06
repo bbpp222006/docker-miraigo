@@ -41,7 +41,7 @@ RUN  apk add --no-cache ca-certificates && \
      php7-pecl-uuid php7-pecl-redis  php7-dev php7-session  \
      php7-fileinfo php7-mbstring php7-pdo php7-pdo_sqlite  php7-zip php7-gd \
      php7-xml php7-iconv php7-pecl-apcu php7-bcmath  php7-pecl-mcrypt php7-xmlwriter \
-     expect git supervisor gcc g++ && \
+     expect git supervisor gcc g++ make && \
      cp -rf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime\
      && apk del tzdata \
      && chmod +x /init.sh \
@@ -52,6 +52,9 @@ HEALTHCHECK --interval=5s --timeout=2s --retries=10 \
 COPY supervisor.conf /etc/
 COPY supervisor.d /etc/
 
-RUN pecl install swoole-4.2.12
+RUN wget http://pecl.php.net/get/swoole-4.4.14.tgz \
+    && printf "no\nno\n" | pecl install swoole-4.4.14.tgz \
+    && echo "extension=swoole.so" > /etc/php.d/50-swoole.ini \
+    && rm -rf swoole-4.4.14.tgz
 
 CMD ["/init.sh"]
