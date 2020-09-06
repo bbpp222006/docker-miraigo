@@ -53,7 +53,7 @@ COPY supervisord.conf /etc/
 COPY supervisor.d /etc/
 
 RUN wget http://pecl.php.net/get/swoole-4.4.14.tgz \
-    && printf "yes\nyes\nyes\nno" | pecl install swoole-4.4.14.tgz \
+    && printf "no\nyes\nyes\nno" | pecl install swoole-4.4.14.tgz \
     && echo "extension=swoole.so" > /etc/php7/conf.d/50-swoole.ini \
     && rm -rf swoole-4.4.14.tgz
 
