@@ -45,7 +45,7 @@ RUN  apk add --no-cache ca-certificates && \
      cp -rf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime\
      && apk del tzdata \
      && chmod +x /init.sh \
-     && mkdir -p /var/log/supervisor
+     && mkdir -p /var/log/supervisord
 HEALTHCHECK --interval=5s --timeout=2s --retries=10 \
   CMD php /check.php || exit 1
 
