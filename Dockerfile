@@ -35,7 +35,7 @@ WORKDIR /mirai
 #RUN  sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
 
 RUN  apk add --no-cache ca-certificates && \
-     apk add --no-cache curl bash openssl-dev tree tzdata php7-openssl \
+     apk add --no-cache curl bash openssl-dev tree tzdata php7-sockets php7-openssl \
      php7 php7-curl php7-json php7-pear php7-phar php7-sqlite3 \
      php7-pecl-protobuf php7-pdo_mysql php7-mysqli php7-ctype \
      php7-pecl-uuid php7-pecl-redis  php7-dev php7-session  \
@@ -53,7 +53,7 @@ COPY supervisord.conf /etc/
 COPY supervisor.d /etc/
 
 RUN wget http://pecl.php.net/get/swoole-4.4.14.tgz \
-    && printf "no\nyes\nyes\nno" | pecl install swoole-4.4.14.tgz \
+    && printf "yes\nyes\nyes\nno" | pecl install swoole-4.4.14.tgz \
     && echo "extension=swoole.so" > /etc/php7/conf.d/50-swoole.ini \
     && rm -rf swoole-4.4.14.tgz
 
