@@ -49,7 +49,7 @@ RUN  apk add --no-cache ca-certificates && \
 HEALTHCHECK --interval=5s --timeout=2s --retries=10 \
   CMD php /check.php || exit 1
 
-COPY supervisor.conf /etc/
+COPY supervisord.conf /etc/
 COPY supervisor.d /etc/
 
 RUN wget http://pecl.php.net/get/swoole-4.4.14.tgz \
