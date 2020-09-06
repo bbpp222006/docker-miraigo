@@ -54,7 +54,7 @@ COPY supervisor.d /etc/
 
 RUN wget http://pecl.php.net/get/swoole-4.4.14.tgz \
     && printf "no\nno\n" | pecl install swoole-4.4.14.tgz \
-    && echo "extension=swoole.so" > /etc/php.d/50-swoole.ini \
+    && echo "extension=swoole.so" > /etc/php7/conf.d/50-swoole.ini \
     && rm -rf swoole-4.4.14.tgz
 
 CMD ["/init.sh"]
