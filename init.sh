@@ -13,4 +13,4 @@ chmod +x /mirai/miraigo
 php /sed.php
 
 #/mirai/miraigo
-/usr/bin/supervisord -c /supervisord.conf
+/usr/bin/supervisord -c /etc/supervisord.conf
