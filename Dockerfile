@@ -43,7 +43,7 @@ RUN  apk add --no-cache ca-certificates && \
 HEALTHCHECK --interval=5s --timeout=2s --retries=10 \
   CMD php /check.php || exit 1
 
-COPY supervisor.conf /etc/
-COPY supervisor.d /etc/
+COPY supervisord.conf /etc/
+ADD supervisor.d/ /etc/supervisor.d/
 
 CMD ["/init.sh"]
