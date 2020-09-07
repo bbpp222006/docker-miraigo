@@ -1,6 +1,6 @@
 #!/bin/bash
-mv -f /miraigo /mirai/
-mv -n /config.json /mirai/
+cp -rf /miraigo /mirai/
+cp -n /config.json /mirai/
 #rm -rf /miraigo
 touch /mirai/install.lock
 
