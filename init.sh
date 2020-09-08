@@ -1,6 +1,10 @@
 #!/bin/bash
 cp -rf /miraigo /mirai/
-cp -n /config.json /mirai/
+if [ -f /mirai/config.json ];then
+    touch /mirai/config.json
+else
+     cp -f /config.json /mirai/
+fi
 #rm -rf /miraigo
 touch /mirai/install.lock
 
