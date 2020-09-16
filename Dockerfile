@@ -27,6 +27,7 @@ ENV LC_ALL en_US.UTF-8
 RUN mkdir /mirai
 COPY init.sh /
 COPY --from=builder /miraigo/miraigo /
+COPY --from=builder /miraigo/template/ /template/
 COPY config.json  /
 COPY check.php /
 COPY sed.php /
