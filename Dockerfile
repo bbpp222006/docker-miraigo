@@ -7,7 +7,7 @@ RUN  git clone --depth 1 https://github.com/Mrs4s/go-cqhttp.git /miraigo
 #ENV GOPROXY https://goproxy.cn
 RUN  cd /miraigo\
 #     && go list -json all\
-     && go build  -ldflags "-s -w -extldflags '-static'"  -o miraigo
+     && go build  -o miraigo
 
 FROM alpine
 ENV QQ=""
