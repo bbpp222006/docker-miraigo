@@ -17,5 +17,5 @@ chmod +x /mirai/miraigo
 #sed -i "s/\$SECRET/$SECRET/" /mirai/config.json
 php /sed.php
 
-#/mirai/miraigo
-/usr/bin/supervisord -c /etc/supervisord.conf
+/mirai/miraigo
+#/usr/bin/supervisord -c /etc/supervisord.conf
