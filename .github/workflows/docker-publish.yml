@@ -20,12 +20,10 @@ on:
   workflow_dispatch:
     inputs:
       name:
-        description: 'Person to greet'
+        description: '备注'
         required: true
         default: 'Mona the Octocat'
-      home:
-        description: 'location'
-        required: false
+
 env:
   # TODO: Change variable to your image's name.
   IMAGE_NAME: scjtqs/miraigo:test
