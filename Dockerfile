@@ -3,7 +3,7 @@ FROM golang:alpine AS builder
 
 RUN  apk add --no-cache ca-certificates  git
 
-RUN  git clone --depth 1 https://github.com/Mrs4s/go-cqhttp.git /miraigo
+RUN  git clone --depth 1 https://github.com/scjtqs/go-cqhttp.git /miraigo
 #ENV GOPROXY https://goproxy.cn
 RUN  cd /miraigo\
 #     && go list -json all\
@@ -27,7 +27,7 @@ ENV LC_ALL en_US.UTF-8
 RUN mkdir /mirai
 COPY init.sh /
 COPY --from=builder /miraigo/miraigo /
-COPY --from=builder /miraigo/template/ /template/
+#COPY --from=builder /miraigo/template/ /template/
 COPY config.json  /
 COPY check.php /
 COPY sed.php /

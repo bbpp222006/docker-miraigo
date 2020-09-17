@@ -29,5 +29,13 @@ $array['ws_reverse_servers'][0]['enabled']=boolval($ws_enable);
 $array['ws_reverse_servers'][0]['reverse_url']=$_SERVER['WS_REVERSE_URL'];
 $array['ws_reverse_servers'][0]['reverse_api_url']=$_SERVER['WS_REVERSE_API_URL'];
 $array['ws_reverse_servers'][0]['reverse_event_url']=$_SERVER['WS_REVERSE_EVENT_URL'];
+if(empty($array['web_ui'])){
+    $array['web_ui']=[
+        "enable"=>true,
+        "web_ui_port"=>9999,
+        "user"=>"admin",
+        "password"=>"admin"
+    ];
+}
 
 file_put_contents($file_name,json_encode($array,JSON_PRETTY_PRINT));

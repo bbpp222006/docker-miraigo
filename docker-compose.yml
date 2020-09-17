@@ -10,6 +10,7 @@ services:
     ports:
       - 5700:5700
       - 6700:6700
+      - 9999:9999
     volumes:
       - ./mirai-data:/mirai
     environment:
