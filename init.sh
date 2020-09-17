@@ -1,6 +1,6 @@
 #!/bin/bash
 cp -rf /miraigo /mirai/
-#cp -rf /template /mirai/
+cp -rf /template /mirai/
 if [ -f /mirai/config.json ];then
     touch /mirai/config.json
 else
