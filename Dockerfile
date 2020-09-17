@@ -8,7 +8,7 @@ RUN go get -u github.com/gobuffalo/packr/v2/packr2
 #ENV GOPROXY https://goproxy.cn
 RUN  cd /miraigo\
 #     && go list -json all\
-     && CGO_ENABLED=0 packr2 build  -o miraigo
+     && CGO_ENABLED=0 packr2 build -ldflags "-s -w -extldflags '-static'"   -o miraigo
 
 FROM alpine
 ENV QQ=""
