@@ -7,7 +7,7 @@ RUN  git clone --depth 1 https://github.com/scjtqs/go-cqhttp.git /miraigo
 #ENV GOPROXY https://goproxy.cn
 RUN  cd /miraigo\
 #     && go list -json all\
-     && go build  -o miraigo
+     && CGO_ENABLED=0 go build  -o miraigo
 
 FROM alpine
 ENV QQ=""
