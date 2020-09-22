@@ -1,9 +1,12 @@
 # how to use
+9999端口 为 webui管理端口
+
 ## for docker run
 ```
 docker run --privileged  --tty=true \
 -p 5700:5700 \
 -p 6700:6700 \
+-p 9999:9999 \
 -v  `pwd`/mirai-data:/mirai \
 -e QQ="123456789" \
 -e PASSWORD="password" \
@@ -29,6 +32,8 @@ services:
     tty: true
     ports:
       - 5700:5700
+      - 6700:6700
+      - 9999:9999
     volumes:
       - ./mirai-data:/mirai
     environment:
@@ -40,3 +45,6 @@ services:
 ```
 
 `docker-compose up` 或者 `docker-compose up -d`（后台运行）
+
+### 添加阿里云国内镜像
+docker pull registry.cn-hangzhou.aliyuncs.com/scjtqs/miraigo:latest
