@@ -3,7 +3,7 @@ FROM golang:alpine AS builder
 
 RUN  apk add --no-cache ca-certificates  git
 
-RUN  git clone --depth 1 https://github.com/scjtqs/go-cqhttp.git /miraigo
+RUN  git clone --depth 1 https://github.com/scjtqs/go-cqhttp-adminui.git /miraigo
 RUN go get -u github.com/gobuffalo/packr/v2/packr2
 #ENV GOPROXY https://goproxy.cn
 RUN  cd /miraigo\
